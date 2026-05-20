@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0;
+  background-color: linear-gradient(115deg, #002124, #32666b, #9cb7b9);/*#022e31;*/
+  /*background-color: #030712;*/
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #a5e7dd75;
+  border-radius: 1px;
+  border: #ffffff 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9c514c;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(115deg, #3c5758,  #9cb7b9, #3c5758);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass card utility */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Light mode overrides ─────────────────── */
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+html.light .glass {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Section backgrounds in light mode */
+html.light section {
+  background: transparent;
+}
+
