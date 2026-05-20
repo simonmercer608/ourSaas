@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation, Link } from "react-router-dom";
-import Loader from "../Loader/Loader";
 import { usePortfolio } from "../../context/PortfolioContext";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
@@ -88,7 +87,7 @@ const ProjectCard = ({ project, onClick }) => (
 );
 
 const Project = ({ openModal, setOpenModal }) => {
-  const { projects, loading, fetchProjects } = usePortfolio();
+  const { projects, fetchProjects } = usePortfolio();
   const location = useLocation();
   const isHome = location.pathname === "/";
 

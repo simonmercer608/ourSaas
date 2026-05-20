@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Loader from "../Loader/Loader";
 import { usePortfolio } from "../../context/PortfolioContext";
 import { FaGraduationCap } from "react-icons/fa";
 
 const Education = () => {
-  const { education, loading, fetchEducation } = usePortfolio();
+  const { education, fetchEducation } = usePortfolio();
 
   useEffect(() => {
     if (education.length === 0) fetchEducation();

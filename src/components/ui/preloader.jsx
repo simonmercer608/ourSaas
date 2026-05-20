@@ -79,20 +79,16 @@ export default function Preloader({ onComplete }) {
   const [progress, setProgress] = useState(0);
   const [exiting, setExiting] = useState(false);
   const [showName, setShowName] = useState(false);
-  const [showTerminal, setShowTerminal] = useState(false);
   const [showBar, setShowBar] = useState(false);
-  const [typedLines, setTypedLines] = useState([]);
   const [typedDone, setTypedDone] = useState(false);
   const typingRef = useRef(null);
 
   // Sequence orchestration
   useEffect(() => {
     const t1 = setTimeout(() => setShowName(true), 300);
-    const t2 = setTimeout(() => setShowTerminal(true), 1100);
-    const t3 = setTimeout(() => setShowBar(true), 1300);
-    // Start typing after terminal appears
-    const t4 = setTimeout(() => startTyping(), 1200);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); };
+    const t2 = setTimeout(() => setShowBar(true), 1300);
+    const t3 = setTimeout(() => startTyping(), 1200);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -113,11 +109,6 @@ export default function Preloader({ onComplete }) {
       totalTyped++;
       // Update progress based on how many characters have been typed
       setProgress(Math.round((totalTyped / TOTAL_CHARS) * 100));
-      setTypedLines((prev) => {
-        const next = [...prev];
-        next[li] = line.slice(0, ci);
-        return next;
-      });
       if (ci < line.length) {
         typingRef.current = setTimeout(tick, SPEED);
       } else {

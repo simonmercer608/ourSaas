@@ -1,10 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import HeroImg from "../../Image/HeroImage.png";
-import Loader from "../Loader/Loader";
-import { usePortfolio } from "../../context/PortfolioContext";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { Bio } from "../../data/constants";
 
 const fadeUp = {
   initial: { opacity: 0, y: 30 },
@@ -12,8 +9,6 @@ const fadeUp = {
 };
 
 const Hero = () => {
-  const { bioData, loading } = usePortfolio();
-  
   // bioData.name = "simon"
   // if (loading.bio) {
   //   return (
@@ -99,6 +94,7 @@ const Hero = () => {
               className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mb-8"
             >
               <a
+                href={Bio.resume}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-12 py-3 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold rounded-xl shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-all duration-300 hover:-translate-y-0.5"

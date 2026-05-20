@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Loader from "../Loader/Loader";
 import { usePortfolio } from "../../context/PortfolioContext";
 
  
 
 const Skills = () => {
-  const { skills, loading, fetchSkills } = usePortfolio();
+  const { skills, fetchSkills } = usePortfolio();
   const totalYears = localStorage.getItem("totalYearofExperience");
 
   const myskills = [

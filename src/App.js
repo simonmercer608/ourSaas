@@ -10,9 +10,6 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectDetails from "./components/ProjectDetails";
 import { useState } from "react";
-import Article from "./components/Article";
-import MouseBackground from "./components/MouseBackground";
-import AiChat from "./components/AiChat";
 
 const Home = ({ openModal, setOpenModal }) => (
   <>
