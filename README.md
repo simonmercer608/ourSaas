@@ -27,7 +27,7 @@ Welcome to my professional portfolio!**React**, **Tailwind CSS**, and **Framer M
 
 ### Build for Production
 To create an optimized production build:
-```bash
+```bash process
 npm run build
 ```
 
