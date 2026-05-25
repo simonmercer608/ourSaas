@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cloud-950 text-slate-200 antialiased;
+  }
+
+  ::selection {
+    @apply bg-cloud-accent/30 text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-cloud-300 via-cloud-accent to-cloud-400 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
+  }
+
+  .section-pad {
+    @apply mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28;
+  }
+}
